@@ -14,10 +14,18 @@ class AddComponent extends Rete.Component {
         super("Add");
     }
 
-    created(node) { 
+    created(node) {
     }
 
-    destroyed(node) { 
+    destroyed(node) {
+    }
+
+    onconnect(io) { // input or output
+        return false; // prevent connect
+    }
+
+    ondisconnect(connection) {
+        return false; // prevent disconnect
     }
 
     connected(connection) {
