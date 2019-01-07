@@ -1,9 +1,9 @@
 {
   "name": "rete-lifecycle-plugin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "",
   "main": "build/lifecycle-plugin.min.js",
-  "module": "build/{{bundleName}}.debug.js",
+  "module": "build/lifecycle-plugin.debug.js",
   "scripts": {
     "build": "rete --build rete.config.js",
     "build:dev": "rete --build rete.config.js --watch",
