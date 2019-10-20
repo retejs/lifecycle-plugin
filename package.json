@@ -1,13 +1,17 @@
 {
   "name": "rete-lifecycle-plugin",
-  "version": "0.2.1",
+  "version": "1.0.0-beta.1",
   "description": "",
-  "main": "build/lifecycle-plugin.min.js",
-  "module": "build/lifecycle-plugin.debug.js",
+  "main": "build/lifecycle-plugin.common.js",
+  "module": "build/lifecycle-plugin.esm.js",
+  "types": "types/index.d.ts",
   "scripts": {
     "build": "rete --build rete.config.js",
     "build:dev": "rete --build rete.config.js --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "prebuild": "npm run lint && npm run types",
+    "lint": "tsc",
+    "types": "tsc src/index.ts --target es5 --declaration --outDir ./types --downlevelIteration --emitDeclarationOnly"
   },
   "author": "Vitaliy Stoliarov",
   "license": "MIT",
@@ -17,6 +21,13 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "rete-cli": "^0.3.0"
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/preset-typescript": "^7.6.0",
+    "rete": "^1.4.2",
+    "rete-cli": "^0.6.0",
+    "typescript": "^3.7.0-beta"
+  },
+  "peerDependencies": {
+    "rete": "^1.4.2"
   }
 }

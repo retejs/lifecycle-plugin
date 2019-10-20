@@ -35,3 +35,12 @@ class AddComponent extends Rete.Component {
     }
 }
 ```
+
+
+TypeScript
+
+```ts
+import { OnCreated, OnDestroyed, OnConnect, OnConnected, OnDisconnect, OnDisconnected } from 'rete-lifecycle-plugin';
+
+class AddComponent extends Rete.Component implements OnCreated, ...
+```
