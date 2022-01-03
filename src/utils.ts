@@ -8,7 +8,7 @@ export function getHook<T extends unknown>(editor: NodeEditor, name: undefined |
     if (method in component) {
         const c = component as T;
 
-        return c[method];
+        return (c[method] as any).bind(c);
     }
 
     return () => null;
